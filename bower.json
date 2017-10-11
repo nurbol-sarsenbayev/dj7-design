@@ -1,7 +1,15 @@
 {
   "name": "7-jeday",
-  "description": "OptimizedHTML - Start HTML Template",
+  "description": "",
   "main": "index.js",
+  "install": {
+    "path": "app/libs/",
+    "sources": {
+      "bootstrap-grid": "bower_components/bootstrap-grid/dist/bootstrap-grid.min.css",
+      "css-hamburgers": "bower_components/css-hamburgers/dist/hamburgers.min.css",
+      "font-awesome": "bower_components/font-awesome/css/font-awesome.min.css"
+    }
+  },
   "authors": [
     "Nurbol Sarsenbaev"
   ],
@@ -22,6 +30,7 @@
     "bootstrap-grid": "^3.3.6-beta.1",
     "jQuery.mmenu": "mmenu#^6.1.8",
     "font-awesome": "fontawesome#^4.7.0",
-    "css-hamburgers": "^0.9.1"
+    "css-hamburgers": "^0.9.1",
+    "owl.carousel": "owl-carousel2#^2.2.1"
   }
 }
