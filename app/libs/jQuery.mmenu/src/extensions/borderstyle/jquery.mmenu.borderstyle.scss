@@ -1,0 +1,36 @@
+/*
+	jQuery.mmenu borderStyle extension CSS
+*/
+
+@import "../../scss/import";
+
+
+.mm-menu.mm-border-none .mm-listview > li,
+.mm-menu .mm-listview.mm-border-none > li,
+.mm-menu .mm-listview > li.mm-border-none
+{
+	&:after
+	{
+		content: none;
+	}
+}
+
+.mm-menu.mm-border-full .mm-listview > li,
+.mm-menu .mm-listview.mm-border-full > li,
+.mm-menu .mm-listview > li.mm-border-full
+{
+	&:after
+	{
+		left: 0 !important;
+	}
+}
+
+.mm-menu.mm-border-offset .mm-listview > li,
+.mm-menu .mm-listview.mm-border-offset > li,
+.mm-menu .mm-listview > li.mm-border-offset
+{
+	&:after
+	{
+		right: $mm_listitemIndent;
+	}
+}

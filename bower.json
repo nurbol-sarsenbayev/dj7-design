@@ -1,0 +1,27 @@
+{
+  "name": "7-jeday",
+  "description": "OptimizedHTML - Start HTML Template",
+  "main": "index.js",
+  "authors": [
+    "Nurbol Sarsenbaev"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/libs/",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {},
+  "dependencies": {
+    "fotorama": "^4.6.4",
+    "jquery": "^3.2.1",
+    "bootstrap-grid": "^3.3.6-beta.1",
+    "jQuery.mmenu": "mmenu#^6.1.8",
+    "font-awesome": "fontawesome#^4.7.0",
+    "css-hamburgers": "^0.9.1"
+  }
+}

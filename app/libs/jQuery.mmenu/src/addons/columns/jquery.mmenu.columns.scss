@@ -1,0 +1,79 @@
+/*
+	jQuery.mmenu columns addon CSS
+*/
+
+@import "../../scss/import";
+
+@mixin mm_columns_sizing( $nr )
+{
+	.mm-columns .mm-panels > .mm-columns-#{$nr}
+	{
+		@include mm_translate( $nr * 100%, 0 );
+	}
+
+	.mm-columns-#{$nr} .mm-panels > .mm-panel
+	{
+		z-index: $nr;
+		@if ( $nr > 0 )
+		{
+			width: ceil( 100% / $nr * 100 ) / 100;
+		}
+		else
+		{
+			width: 100%;
+		}
+
+		&:not( .mm-opened ):not( .mm-subopened )
+		{
+			@include mm_translate( ($nr + 1) * 100%, 0 );
+		}
+	}
+
+	@include mm_sizing( ".mm-columns-#{$nr}", $mm_menuWidth, $mm_menuMinWidth, $mm_menuMaxWidth * $nr );
+	@include mm_sizing_right(".mm-columns-#{$nr}", $mm_menuWidth, $mm_menuMinWidth, $mm_menuMaxWidth * $nr);
+}
+
+.mm-columns
+{
+	transition-property: width;
+
+	.mm-panels > .mm-panel
+	{
+		right: auto;
+		transition-property: width, transform;
+
+		&.mm-opened,
+		&.mm-subopened
+		{
+			border-left: 1px solid;
+			border-color: inherit;
+			display: block !important;
+		}
+	}
+}
+
+@include mm_columns_sizing( 0 );
+@include mm_columns_sizing( 1 );
+@include mm_columns_sizing( 2 );
+@include mm_columns_sizing( 3 );
+@include mm_columns_sizing( 4 );
+
+
+.mm-columns.mm-offcanvas
+{
+	&.mm-bottom,
+	&.mm-top
+	{
+		width: 100%;
+		max-width: 100%;
+		min-width: 100%;
+	}
+}
+html.mm-opening .mm-columns.mm-offcanvas
+{
+	&.mm-front,
+	&.mm-next
+	{
+		transition-property: width, min-width, max-width, transform;
+	}
+}

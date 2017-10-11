@@ -1,0 +1,34 @@
+/*
+	jQuery.mmenu autoHeight addon CSS
+*/
+
+@import "../../scss/import";
+
+
+.mm-menu
+{
+	&.mm-autoheight
+	{
+		transition: none $mm_transitionDuration $mm_transitionFunction;
+		transition-property: transform, height;
+
+		&:not( .mm-offcanvas )
+		{
+			position: relative;
+		}
+	}
+
+	&.mm-measureheight
+	{
+		.mm-panel:not(.mm-vertical),
+		.mm-panel.mm-vertical.mm-opened
+		{
+			display: block !important;
+		}
+		.mm-panels > .mm-panel
+		{
+			bottom: auto !important;
+			height: auto !important;
+		}
+	}
+}
