@@ -1,5 +1,4 @@
 @import "fonts";
-@import "libs";
 @import "vars";
 
 * {
@@ -80,7 +79,7 @@ body textarea:required:valid {
 	}
 	&:focus, &:hover {
 		text-decoration: none;
-		color: #fff;
+		//color: #fff;
 	}
 	&:hover {
 		background-color: lighten($accent, 5%);
@@ -92,6 +91,17 @@ body textarea:required:valid {
 		background-color: darken($accent, 5%);
 		&::after {
 			opacity: .32;
+		}
+	}
+
+	&-white {
+		background-color: #fff;
+		color: #444444;
+		&:after {
+			background-color: lighten(#000, 50%);
+		}
+		&:hover, &:active {
+			background-color: darken(#fff, 5%);
 		}
 	}
 }
@@ -151,6 +161,7 @@ section, header {
 
 section {
 	background-color: #fff;
+	color: #000;
 }
 
 .page-header {
@@ -329,13 +340,13 @@ section {
 					}
 
 					&:hover {
-						color: $orange;
-						&:before { color: $orange; }
+						color: $accent;
+						&:before { color: $accent; }
 					}					
 				}	
 				&.mm-selected a, &.active a { 
 					background: none !important; 
-					color: $orange;
+					color: $accent;
 				}			
 			}
 		}
@@ -343,6 +354,110 @@ section {
 
 }
 
+.carousel-services {
+
+	&-item {		
+		display: flex;
+		flex-direction: column-reverse;
+		&:hover {
+			.carousel-services-image {
+				opacity: 1;
+			}
+		}
+	}
+
+	&-content {
+		padding: 60px 10% 80px;
+		font-size: 18px;
+		font-weight: 300;
+		color: #ffffff;
+		text-align: center;
+
+		.h3 {
+			font-size: 30px;
+			font-weight: 800;
+			span {
+				font-size: 18px;
+				font-weight: 300;
+				display: block;
+			}
+		}
+	}
+
+	&-list {
+		padding: 0;
+		list-style: none;
+		strong {
+			font-family: firesans, sans-serif;
+			color: #4A4A4A;
+		}
+		.fa {
+			font-size: 14px;
+		}
+		li {
+			padding: 20px 0;
+			border-bottom: 1px solid rgba(#000, 12%);
+			&:last-child {
+				border-bottom: none;
+			}
+		}
+	}
+
+	.carousel-logo {
+		text-align: center;
+		img {
+			width: 100px;
+			height: auto;
+			display: inline-block;
+		}
+	}
+
+	&-image {
+		background-size: cover;
+		background-position: center;
+		opacity: 0.7;
+		transition: opacity .5s ease;
+	}
+
+	.owl-item {
+		backface-visibility: inherit;
+		&:nth-child(2n + 2) {
+			.carousel-services-item {
+				flex-direction: column;				
+			}
+		}
+
+		@for $index from 1 through length($colors) {
+			&:nth-child(#{length($colors)}n + #{$index}) {
+				background: nth($colors, $index);
+			} 	
+		}	
+	}
+
+	.owl-nav {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		color: #222222;
+		font-size: 26px;
+		
+		div {
+			width: 64px;
+			height: 64px;
+			background-color: #ffffff;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			&.owl-next {
+				position: absolute;
+				top: 0;
+				right: 0;
+			}
+		}
+	}
+
+}
 
 
 @import "media"; // Всегда в конце

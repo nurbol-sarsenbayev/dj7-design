@@ -23,7 +23,9 @@
     "test",
     "tests"
   ],
-  "devDependencies": {},
+  "devDependencies": {
+    "equalheights": "equalHeights#*"
+  },
   "dependencies": {
     "fotorama": "^4.6.4",
     "jquery": "^3.2.1",

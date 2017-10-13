@@ -22,19 +22,21 @@ gulp.task('common-js', function() {
 		'app/js/common.js',
 		])
 	.pipe(concat('common.min.js'))
-	.pipe(uglify())
-	.pipe(gulp.dest('app/js'));
+	//.pipe(uglify())
+	.pipe(gulp.dest('app/js'))
+	.pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('js', ['common-js'], function() {
+gulp.task('libs-js', function() {
 	return gulp.src([
-		'app/libs/jquery/dist/jquery.min.js',
-		'app/libs/jQuery.mmenu/dist/jquery.mmenu.all.js',
+		'app/libs/jquery/jquery.js',
+		'app/libs/jQuery.mmenu/jquery.mmenu.all.js',
+		'app/libs/owl.carousel/owl.carousel.js',
+		'app/libs/equalheights/equalHeights.js'
 		//'app/libs/fotorama/fotorama.js',
-		'app/js/common.min.js', // Всегда в конце
 		])
-	.pipe(concat('scripts.min.js'))
-	// .pipe(uglify()) // Минимизировать весь js (на выбор)
+	.pipe(concat('libs.min.js'))
+	//.pipe(uglify()) // Минимизировать весь js (на выбор)
 	.pipe(gulp.dest('app/js'))
 	.pipe(browserSync.reload({stream: true}));
 });
@@ -61,9 +63,10 @@ gulp.task('sass', function() {
 	.pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('watch', ['sass', 'js', 'browser-sync'], function() {
+gulp.task('watch', ['sass', 'libs-js', 'common-js', 'browser-sync'], function() {
 	gulp.watch('app/sass/**/*.+(sass|scss)', ['sass']);
-	gulp.watch(['libs/**/*.js', 'app/js/common.js'], ['js']);
+	gulp.watch(['libs/**/*.js'], ['libs-js']);
+	gulp.watch(['app/js/common.js'], ['common-js']);
 	gulp.watch('app/*.html', browserSync.reload);
 });
 

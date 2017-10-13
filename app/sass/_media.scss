@@ -38,6 +38,12 @@
 			}
 		}
 	}
+
+	.carousel-services {
+		&-item {
+			flex-direction: column;
+		}
+	}
 }
 	/**/
 
