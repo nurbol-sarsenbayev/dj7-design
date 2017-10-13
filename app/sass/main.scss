@@ -46,6 +46,22 @@ body textarea:required:valid {
 	line-height: 1.4;
 }
 
+.h2 {
+	font-size: 30px;
+	font-weight: 800;
+	color: #fff;
+	span {
+		color: $accent;
+	}
+
+	&.accent {
+		color: $accent;
+		span {
+			color: #fff;
+		}
+	}
+}
+
 .button {
 	display: inline-block;
 	border: none;
@@ -457,6 +473,61 @@ section {
 		}
 	}
 
+}
+
+.section-overlay {
+	position: relative;
+	color: #000;
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(#fff, .80);
+	}
+
+	&.inverse {		
+		color: #fff;
+		&:before {
+			background-color: rgba(#3d3c3c, .92);
+		}
+	}
+}
+
+.s-king {
+	padding: 125px 0;
+	p {
+		font-size: 18px;
+	}
+}
+
+.section-gallery {
+	position: relative;
+
+	.fotorama__nav-wrap {
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translate(-50%, 0);
+
+		.fotorama__thumb {
+			border: 4px solid #fff;
+		}
+		.fotorama__active .fotorama__thumb {
+			border-color: #3C3C3D;
+		}
+
+		.fotorama__arr {
+			&.fotorama__arr--prev {
+			}
+			&.fotorama__arr--next {
+			}
+		}
+
+	}
 }
 
 

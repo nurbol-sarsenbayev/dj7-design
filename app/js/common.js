@@ -32,6 +32,9 @@ $(function() {
 		ths.html(ths.html().replace(/(\S+)\s*$/, '<span>$1</span>'));
 	});
 
+	var king_h2 = $('.s-king .h2');
+	king_h2.html(king_h2.html().replace(/(\S+)\s*$/, '<span>$1</span>'));
+
 	/* OwlCarousel */
 	$(".carousel-services").owlCarousel({
 		loop: true,
