@@ -80,5 +80,17 @@ $(function() {
 		return false;
 	});
 
+	/* Selectize */
+	$("select").selectize();
+
+
+	/* OwlCarousel */
+	$(".review-carousel").owlCarousel({
+		loop: false,
+		dots: true,
+		items: 1,
+		smartSpeed: 700
+	});
+
 
 });

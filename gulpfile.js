@@ -33,7 +33,10 @@ gulp.task('libs-js', function() {
 		'app/libs/jQuery.mmenu/jquery.mmenu.all.js',
 		'app/libs/owl.carousel/owl.carousel.js',
 		'app/libs/equalheights/equalHeights.js',
-		'app/libs/fotorama/fotorama.js'
+		'app/libs/fotorama/fotorama.js',
+		'app/libs/microplugin/microplugin.js',
+		'app/libs/sifter/sifter.js',
+		'app/libs/selectize/selectize.js'
 		])
 	.pipe(concat('libs.min.js'))
 	//.pipe(uglify()) // Минимизировать весь js (на выбор)

@@ -8,7 +8,8 @@
 	}
 }
 
-input, select, textarea {
+input, select, textarea,
+.selectize-control.single .selectize-input {
 	outline: none;
 	display: inline-block;
 	padding: 14px 22px;
@@ -19,10 +20,11 @@ input, select, textarea {
 	color: #fff;
 	font-size: 16px;
 	font-family: raleway, sans-serif;
+	box-shadow: none;
 
 	option {
 		color: #444;
-		font-size: 14px;
+		font-size: 15px;
 	}
 
 	&::-webkit-input-placeholder {
@@ -38,6 +40,50 @@ input, select, textarea {
 	&:-ms-input-placeholder {
 		color: #fff;
 		opacity: 1;
+	}
+}
+
+.selectize-control.single {
+	.selectize-input {
+		input {
+			font-size: 16px;
+			width: 100%;
+		}
+	
+		&.input-active {
+			background-color: transparent;
+		}
+
+		&.dropdown-active {
+			&:before { display: none; }
+			&:after {
+				margin-top: -9px;
+				content: "\f106";
+			}
+		}
+
+		&:after {
+			border: none;
+			font-family: fontawesome;
+			content: "\f107";
+			font-size: 18px;
+			margin-top: -9px;
+			top: 50%;
+			right: 22px;
+		}
+	}
+
+	.selectize-dropdown {
+		border: none;
+		box-shadow: none;
+		border-radius: 0;
+		.option {
+			padding: 10px 22px;
+			font-size: 15px;		
+			&.active {
+				background-color: lighten($accent, 25);
+			}
+		}
 	}
 }
 
@@ -181,6 +227,10 @@ section {
 	&.inverse {
 		background-color: #000;
 		color: #fff;
+	}
+
+	.section-wrapper {
+		position: relative;
 	}
 }
 
@@ -535,7 +585,7 @@ section {
 				margin: 0 0 15px 0;
 			}
 
-			input, select {
+			input, select, .selectize-control.single {
 				margin-top: 18px;
 				width: 100%;
 			}
@@ -569,6 +619,63 @@ section {
 						opacity: 0.6;
 						filter: blur(4px);
 					}
+				}
+			}
+		}		
+	}
+
+	&-review {
+		.h2 {
+			margin: 0 0 30px 0;
+		}
+
+		.author, .review-date {
+			font-family: 'PT Serif', sans-serif;
+			font-size: 30px;
+			font-weight: bold;
+			font-style: italic;
+			margin: 0;
+		}
+
+		.review-date {
+			font-size: 14px;
+			font-weight: normal;
+			opacity: 0.26;
+		}
+
+		.ratings {
+			font-size: 14px;
+			color: $accent;
+			margin: 20px 0 30px;
+			.fa {
+				margin: 3px;
+			}
+		}
+
+		.review-content {
+			display: flex;
+			font-family: 'Segoe UI', sans-serif;
+			color: #95989A;			
+
+			&:before, &:after {
+				content: '“';
+				font-family: 'Times New Roman', Times, serif;
+				font-weight: 600;
+				font-size: 56px;
+				color: $accent;
+				margin: 0 40px 0 0;
+			}
+			&:after {
+				content: '”';
+				margin: 0 0 0 40px;
+			}
+		}
+
+		.review-carousel {
+			.owl-dot {
+				span { background: #fff; }
+				&.active {
+					span { background: $accent; }
 				}
 			}
 		}
