@@ -27,13 +27,17 @@ $(function() {
 	});
 
 	/* Regexp */
-	$('.carousel-services-content .h3').each(function() {
+	$('.start-span').each(function() {
+		var ths = $(this);
+		ths.html(ths.html().replace(/^(\S+\s*)/, '<span>$1</span>'));
+	});
+
+	$('.end-span').each(function() {
 		var ths = $(this);
 		ths.html(ths.html().replace(/(\S+)\s*$/, '<span>$1</span>'));
 	});
 
-	var king_h2 = $('.s-king .h2');
-	king_h2.html(king_h2.html().replace(/(\S+)\s*$/, '<span>$1</span>'));
+
 
 	/* OwlCarousel */
 	$(".carousel-services").owlCarousel({
@@ -51,7 +55,6 @@ $(function() {
 			setTimeout(function() { carouselService() }, 100);		
 		}
 	});
-
 
 	function carouselService() {
 		$('.carousel-services-content').equalHeights();
@@ -92,5 +95,27 @@ $(function() {
 		smartSpeed: 700
 	});
 
+	$(".partners-carousel").owlCarousel({
+		loop: true,
+		nav: true,
+		dots: false,
+		margin: 70,
+		smartSpeed: 700,
+		responsive: {
+			0: { items: 1 },
+			481: { items: 2 },
+			769: { items: 3 },			
+			993: { items: 4 }
+		},
+		navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+		onInitialized: function() {
+			setTimeout(partnersCarousel, 100);
+		}
+	});
+
+	function partnersCarousel() {
+		$(".partners-carousel-item").equalHeights();
+	}
+	
 
 });

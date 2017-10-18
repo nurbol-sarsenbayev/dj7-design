@@ -680,6 +680,41 @@ section {
 			}
 		}
 	}
+
+	&-partners {
+		.h2 {
+			margin: 0 0 70px 0;
+		}
+
+		.partners-carousel {
+			position: relative;
+			padding: 0 8%;
+
+			.partners-carousel-item {
+				//line-height: 100%;
+				display: flex;
+				img {
+					margin: auto;
+					width: auto;
+					max-width: 100%;
+				}
+			}
+
+			.owl-prev, .owl-next {
+				position: absolute;
+				top: 50%;
+				left: 0;
+				transform: translate(0, -50%);
+				font-size: 30px;
+				color: #999999;
+			}
+
+			.owl-next {
+				left: auto;
+				right: 0;
+			}
+		}
+	}
 }
 
 
