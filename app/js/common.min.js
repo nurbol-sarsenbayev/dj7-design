@@ -65,6 +65,20 @@ $(function() {
 
 	window.onresize = carouselService;
 
-	/* */
+	/* Callback */
+	var success = $(".callback .success");
+
+	$("form.callback").submit(function() {
+		var th = $(this);
+
+		success.addClass('active');
+		setTimeout(function() {
+			success.removeClass('active');
+			th.trigger("reset");
+		}, 3000);
+
+		return false;
+	});
+
 
 });

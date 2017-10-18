@@ -27,8 +27,7 @@
 	<style>body { opacity: 0; overflow-x: hidden; } html { background-color: #1A1A1A; }</style>
 
 	<link rel="stylesheet" href="css/libs.min.css">
-	<script src="js/libs.min.js"></script>
-
+	<script src="js/libs.min.js"></script>	
 </head>
 
 <body>		
@@ -108,7 +107,7 @@
 				<div class="carousel-services-item">
 					<div class="carousel-services-content">
 						<div>
-								<div class="carousel-logo"><img src="img/logo-2.svg" alt=""></div>
+								<div class="logo-2 center"><img src="img/logo-2.svg" alt=""></div>
 								<h3 class="h3">Косметологический сервис</h3>
 								<ul class="carousel-services-list">
 									<li>Ключевая услуга #1 - <strong>8500 <i class="fa fa-rub"></i></strong></li>
@@ -124,7 +123,7 @@
 				<div class="carousel-services-item">
 					<div class="carousel-services-content">
 						<div>
-								<div class="carousel-logo"><img src="img/logo-2.svg" alt=""></div>
+								<div class="logo-2 center"><img src="img/logo-2.svg" alt=""></div>
 								<h3 class="h3">Парикмахерский сервис</h3>
 								<ul class="carousel-services-list">
 									<li>Ключевая услуга #1 - <strong>8500 <i class="fa fa-rub"></i></strong></li>
@@ -139,7 +138,7 @@
 
 				<div class="carousel-services-item">
 					<div class="carousel-services-content">
-						<div class="carousel-logo"><img src="img/logo-2.svg" alt=""></div>
+						<div class="logo-2 center"><img src="img/logo-2.svg" alt=""></div>
 						<h3 class="h3">Маникюрный сервис</h3>
 						<ul class="carousel-services-list">
 							<li>Ключевая услуга #1 - <strong>8500 <i class="fa fa-rub"></i></strong></li>
@@ -153,8 +152,8 @@
 
 				<div class="carousel-services-item">
 					<div class="carousel-services-content">
-						<div class="carousel-logo"><img src="img/logo-2.svg" alt=""></div>
-						<h3 class="h3">Косметологический сервис</h3>
+						<div class="logo-2 center"><img src="img/logo-2.svg" alt=""></div>
+						<h3 class="h3">Массаж и SPA сервис</h3>
 						<ul class="carousel-services-list">
 							<li>Ключевая услуга #1 - <strong>8500 <i class="fa fa-rub"></i></strong></li>
 							<li>Ключевая услуга #2 - <strong>8500 <i class="fa fa-rub"></i></strong></li>
@@ -163,6 +162,20 @@
 						<div class="button button-white">Все услуги</div>
 					</div>
 					<div class="carousel-services-image" style="background-image: url('./img/service.png')"></div>
+				</div>
+
+				<div class="carousel-services-item">
+					<div class="carousel-services-content">
+						<div class="logo-2 center"><img src="img/logo-2.svg" alt=""></div>
+						<h3 class="h3">Солярий сервис</h3>
+						<ul class="carousel-services-list">
+							<li>Ключевая услуга #1 - <strong>8500 <i class="fa fa-rub"></i></strong></li>
+							<li>Ключевая услуга #2 - <strong>8500 <i class="fa fa-rub"></i></strong></li>
+							<li>Ключевая услуга #3 - <strong>8500 <i class="fa fa-rub"></i></strong></li>
+						</ul>
+						<div class="button button-white">Все услуги</div>
+					</div>
+					<div class="carousel-services-image" style="background-image: url('./img/service2.png')"></div>
 				</div>
 			</div>
 
@@ -182,13 +195,10 @@
 						<div class="section-gallery fotorama" 
 							 data-nav="thumbs" 
 							 data-navwidth="93%"
-							 data-fit="cover"
-							 data-thumbfit="cover"
-							 data-width="653" 
-							 data-height="428" 
+							 data-width="100%" 
 							 data-thumbwidth="113" 
 							 data-thumbmargin="10"
-							 data-thumbborderwidth="0">
+							 data-thumbborderwidth="4">
 							<img src="img/photos/small/foto-13.jpg" alt="Фото салон красоты">
 							<img src="img/photos/small/foto-15.jpg" alt="Фото салон красоты">
 							<img src="img/photos/small/foto-16.jpg" alt="Фото салон красоты">
@@ -204,11 +214,40 @@
 			</div>
 		</section>
 
+		<section class="s-call inverse" style="background-image: url('img/madama.jpg')">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-5 col-md-offset-7 col-sm-6 col-sm-offset-6 ">
+						<form class="callback">
+							<div class="success"><span>Спасибо за Вашу заявку</span></div>
+
+							<div class="logo-2"><img src="img/logo-2.svg" alt=""></div>
+							<div class="h2">Оставить заявку</div>
+							<p>Оставьте заявку и мы перезвоним вам в течение 15 минут.</p>
+	
+							<input type="text" name="name" placeholder="Ваше имя..." tabindex="-1">
+							<input type="text" name="phone" placeholder="Ваш телефон..." tabindex="-1">
+							<select tabindex="-1">
+								<option value selected disabled>Выберите услугу...</option>
+								<option>Косметологический</option>
+								<option>Парикмахерский</option>
+								<option>Маникюрный</option>
+								<option>Массаж и SPA</option>
+								<option>Солярий</option>
+							</select>
+
+							<button class="button button-white">Отправить</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section style="height: 400px;"></section>
+
 	</div>
 
-	
-
-	<link rel="stylesheet" href="css/main.min.css">
+	<link rel="stylesheet" href="css/main.min.css"> 
 	<script src="js/common.min.js"></script>
 </body>
 </html>

@@ -31,6 +31,7 @@
     "font-awesome": "fontawesome#^4.7.0",
     "css-hamburgers": "^0.9.1",
     "owl.carousel": "owl-carousel2#^2.2.1",
-    "equalheights": "equalHeights#*"
+    "equalheights": "equalHeights#*",
+    "selectize": "^0.12.4"
   }
 }
