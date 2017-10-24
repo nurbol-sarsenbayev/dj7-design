@@ -92,14 +92,14 @@ $(function() {
 		loop: false,
 		dots: true,
 		items: 1,
-		smartSpeed: 700
+		smartSpeed: 700,
+		autoHeight: true
 	});
 
 	$(".partners-carousel").owlCarousel({
 		loop: true,
 		nav: true,
 		dots: false,
-		margin: 70,
 		smartSpeed: 700,
 		responsive: {
 			0: { items: 1 },
