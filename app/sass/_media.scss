@@ -81,6 +81,39 @@
 			padding: 12% 0;
 		}
 	}
+
+	.s-review {
+		.quotes {
+			display: none;
+		}
+	}
+
+	.s-partners {
+		.partners-carousel {
+			.owl-prev {
+				left: 0;
+			}
+			.owl-next {
+				right: 0;
+			}
+		}
+	}
+
+	.footer {
+		padding: 30px 0;
+
+		.logo img {
+			width: 180px;
+		}
+
+		&-social {
+			margin-top: 0;
+		}
+
+		&-phone {
+			margin-top: 0;
+		}
+	}
 }
 	/**/
 
@@ -97,13 +130,7 @@
 				font-size: 29px;
 			}
 		}
-	}
-
-	.s-review .review-content {
-		&:before, &:after {
-			display: none;
-		}
-	}
+	}	
 }
 	/**/
 
