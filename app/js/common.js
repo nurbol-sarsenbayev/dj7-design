@@ -26,6 +26,8 @@ $(function() {
 		$menuBtn.removeClass('is-active');		
 	});
 
+
+
 	/* Regexp */
 	$('.start-span').each(function() {
 		var ths = $(this);
@@ -118,4 +120,23 @@ $(function() {
 	}
 	
 
+	var $wnd = $(window);
+	var $top = $('.top');
+	
+	$wnd.scroll(function() {
+		if($wnd.scrollTop() > $wnd.height()) {
+			$top.addClass('active');
+		} else {
+			$top.removeClass('active');
+		}
+	});
+
+	$top.click(function() {
+		$('html, body').stop().animate({ scrollTop: 0}, 'slow', 'swing');
+	})
+
+});
+
+$(window).on('load', function() {
+	$('.preloader').delay(1000).fadeOut('slow');
 });
