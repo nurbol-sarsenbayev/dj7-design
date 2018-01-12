@@ -22,7 +22,7 @@ gulp.task('common-js', function() {
 		'app/js/common.js',
 		])
 	.pipe(concat('common.min.js'))
-	//.pipe(uglify())
+	.pipe(uglify())
 	.pipe(gulp.dest('app/js'))
 	.pipe(browserSync.reload({stream: true}));
 });
@@ -39,7 +39,7 @@ gulp.task('libs-js', function() {
 		'app/libs/selectize/selectize.js'
 		])
 	.pipe(concat('libs.min.js'))
-	//.pipe(uglify()) // Минимизировать весь js (на выбор)
+	.pipe(uglify()) // Минимизировать весь js (на выбор)
 	.pipe(gulp.dest('app/js'))
 	.pipe(browserSync.reload({stream: true}));
 });
@@ -61,7 +61,7 @@ gulp.task('sass', function() {
 	.pipe(sass({outputStyle: 'expand'}).on("error", notify.onError()))
 	.pipe(rename({suffix: '.min', prefix : ''}))
 	.pipe(autoprefixer(['last 15 versions']))
-	//.pipe(cleanCSS()) // Опционально, закомментировать при отладке
+	.pipe(cleanCSS()) // Опционально, закомментировать при отладке
 	.pipe(gulp.dest('app/css'))
 	.pipe(browserSync.reload({stream: true}));
 });
@@ -87,11 +87,13 @@ gulp.task('build', ['removedist', 'imagemin', 'sass', 'libs-js', 'common-js'], f
 		]).pipe(gulp.dest('dist'));
 
 	var buildCss = gulp.src([
+		'app/css/libs.min.css',
 		'app/css/main.min.css',
-		]).pipe(gulp.dest('dist/css'));
+	]).pipe(gulp.dest('dist/css'));
 
 	var buildJs = gulp.src([
-		'app/js/scripts.min.js',
+		'app/js/common.min.js',
+		'app/js/libs.min.js',
 		]).pipe(gulp.dest('dist/js'));
 
 	var buildFonts = gulp.src([
